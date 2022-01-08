@@ -1,8 +1,8 @@
 let intro = document.querySelector(".intro");
 let text = document.querySelector(".text-header");
 let textSpan = document.querySelectorAll(".text");
-let textAfter = document.querySelector(".text-after")
 
+/* Intro Function */
 window.addEventListener('DOMContentLoaded', ()=>{
   setTimeout(()=>{
     textSpan.forEach((span, idx)=>{
@@ -24,4 +24,21 @@ window.addEventListener('DOMContentLoaded', ()=>{
       intro.style.top = "-100vh";
     }, 2300)
   }, 1000)
+});
+
+/* Calcolate vh function */
+function vh(v) {
+  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  return (v * h) / 100;
+}
+
+/* First button scroll function */
+let btnFirst = document.querySelector(".button")
+
+btnFirst.addEventListener("click", ()=>{
+   window.scrollTo({
+    top: vh(100),
+    left: 0, 
+    behavior: "smooth"
+   });
 })
