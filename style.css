@@ -10,12 +10,19 @@ html {
   max-width: 900px;
 }
 
-body {
-  font-family: "Playfair Display";
+.button {
+  background-image: -webkit-gradient(linear, left top, right top, from(#c31432), to(#240b36));
+  background-image: linear-gradient(to right, #c31432, #240b36);
+  display: inline-block;
+  color: white;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  border-radius: 8px;
 }
 
-p {
-  font-family: "EB Garamond";
+.button .text {
+  font-family: "Poppins";
+  font-size: 1.5rem;
 }
 
 /* Splash Screen */
@@ -75,17 +82,32 @@ p {
 }
 
 header {
+  position: relative;
   background-image: url(hero-image.jpg);
   height: 100vh;
   width: 100vw;
   background-size: cover;
   background-position: right;
+  font-family: "Montserrat";
+  text-transform: uppercase;
 }
 
-header .bg-filter {
-  height: 100%;
+header h1 {
+  position: absolute;
+  font-size: 2.5rem;
+  color: white;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.25);
+  text-align: center;
+  bottom: 20%;
+}
+
+header .button {
+  position: absolute;
+  bottom: 13%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin: auto;
 }
 
 /* Embeded Video */

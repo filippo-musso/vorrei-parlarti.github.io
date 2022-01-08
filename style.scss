@@ -11,12 +11,17 @@ html {
   max-width: 900px;
 }
 
-body {
-  font-family: "Playfair Display";
-}
-
-p {
-  font-family: "EB Garamond";
+.button {
+  background-image: linear-gradient(to right, #c31432, #240b36);
+  display: inline-block;
+  color: white;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  .text {
+    font-family: "Poppins";
+    font-size: 1.5rem;
+  }
 }
 
 /* Splash Screen */
@@ -63,15 +68,31 @@ p {
 }
 
 header {
+  position: relative;
   background-image: url(hero-image.jpg);
   height: 100vh;
   width: 100vw;
   background-size: cover;
   background-position: right;
-  .bg-filter {
-    height: 100%;
+  // font-family: "Old Standard TT";
+  font-family: "Montserrat";
+  // font-family: "Cormorant";
+  // font-family: "Poppins";
+  text-transform: uppercase;
+  h1 {
+    position: absolute;
+    font-size: 2.5rem;
+    color: white;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.25);
+    text-align: center;
+    bottom: 20%;
+  }
+  .button {
+    position: absolute;
+    bottom: 13%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
   }
 }
 
