@@ -2,38 +2,29 @@
   margin: 0;
 }
 
+html {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
 body {
-  background-color: white;
-  font-family: "EB Garamond";
-  font-weight: normal;
-  color: white;
-  max-width: 500px;
+  font-family: "Playfair Display";
 }
 
 p {
-  font-size: 1.5rem;
+  font-family: "EB Garamond";
 }
 
 header {
-  background-image: linear-gradient(45deg, #c31432, #240b36);
+  background-image: url(hero-image.jpg);
+  height: 100vh;
   width: 100vw;
-  height: 10vh;
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
-  h1 {
-    font-family: "Playfair Display";
-    text-align: center;
-    line-height: 8vh;
-  }
-}
-
-main {
-  #first {
-    margin-top: 25px;
-    color: #240b36;
-    padding: 0 20px;
-    p {
-      color: #c31432;
-    }
+  background-size: cover;
+  background-position: right;
+  .bg-filter {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.25);
   }
 }
 
