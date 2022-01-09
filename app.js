@@ -5,6 +5,9 @@ let textSpan = document.querySelectorAll(".text");
 
 /* When content of page loads */
 window.addEventListener('DOMContentLoaded', ()=>{
+  /* Return to top after reloading page reusing scroll function */
+  smoothScroll("header", 1000);
+
   /* Add active class to the elements to make them rise */
   setTimeout(()=>{
     textSpan.forEach((span, idx)=>{
