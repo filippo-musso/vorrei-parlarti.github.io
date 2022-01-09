@@ -69,3 +69,49 @@ let btn = document.querySelector(".button");
 btn.addEventListener("click", function(){
   smoothScroll("#first", 1250);
 })
+
+/* Slider */
+const slider = document.querySelector(".slider");
+const sliderImages = document.querySelectorAll(".slider img");
+
+/* Buttons */
+const nextButton = document.querySelector(".rightArrow");
+const prevButton = document.querySelector(".leftArrow");
+
+let counter = 1;
+const size = sliderImages[0].clientWidth;
+
+slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
+
+/* Button Listener */
+nextButton.addEventListener("click", function(){
+  if (counter >= sliderImages.length - 1) {
+    return;
+  };
+  slider.style.transition = "transform 0.4s ease-in-out";
+  counter++;
+  console.log(counter);
+  slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
+});
+
+prevButton.addEventListener("click", function(){
+  if (counter <= 0) {
+    return;
+  };
+  slider.style.transition = "transform 0.4s ease-in-out";
+  counter--;
+  slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
+});
+
+slider.addEventListener("transitionend", function() {
+  if (sliderImages[counter].id === "lastClone") {
+    slider.style.transition = "none";
+    counter = sliderImages.length - 2;
+    slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
+  }
+  if (sliderImages[counter].id === "firstClone") {
+    slider.style.transition = "none";
+    counter = sliderImages.length - counter;
+    slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
+  }
+});

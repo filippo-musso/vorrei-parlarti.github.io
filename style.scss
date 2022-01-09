@@ -23,7 +23,7 @@ p {
 }
 
 .button {
-  background-image: linear-gradient(to right, #c31432, #240b36);
+  background-image: linear-gradient(to right, $colorRed, $colorBlue);
   display: inline-block;
   color: white;
   padding: 10px 15px;
@@ -108,7 +108,7 @@ section {
   padding: 0 40px;
   margin: 30px 0;
   &.color {
-    background-image: linear-gradient(to right, #c31432, #240b36);
+    background-image: linear-gradient(to right, $colorRed, $colorBlue);
     padding: 60px 40px;
     h2,
     h3,
@@ -157,13 +157,50 @@ section {
   }
 }
 
+/* Slider */
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 350px;
+  height: 350px;
+  .slider {
+    display: flex;
+    height: 100%;
+    img {
+      height: 100%;
+      width: 350px;
+    }
+  }
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .leftArrow {
+    left: 5px;
+    color: rgba(195, 20, 50, 0.5);
+    &:active {
+      color: $colorRed;
+    }
+  }
+  .rightArrow {
+    right: 5px;
+    color: rgba(36, 11, 54, 0.5);
+    &:active {
+      color: $colorBlue;
+    }
+  }
+}
+
 /* Footer */
 footer {
   padding: 20px 0;
   text-align: center;
   h3 {
     font-size: 1rem;
-    background: linear-gradient(to right, #c31432 0%, #240b36 100%);
+    background: linear-gradient(to right, $colorRed 0%, $colorBlue 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
