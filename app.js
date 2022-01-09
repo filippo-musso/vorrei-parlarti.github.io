@@ -26,19 +26,58 @@ window.addEventListener('DOMContentLoaded', ()=>{
   }, 1000)
 });
 
-/* Calcolate vh function */
-function vh(v) {
-  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-  return (v * h) / 100;
+// /* Get vh value function */
+// function vh(v) {
+//   var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+//   return (v * h) / 100;
+// }
+
+// /* First button scroll function */
+function smoothScroll(target, duration) {
+  var target = document.querySelector(target);
+  var targetPosition = target.getBoundingClientRect().top - 29; /* Subtract the margin of the element */  
+  var startPosition = window.pageYOffset;
+  var distance = targetPosition - startPosition;
+  var startTime = null;
+
+  function animation(currentTime) {
+    if (startTime === null) {
+      startTime = currentTime;
+    }
+    var timeElapsed = currentTime - startTime;
+    var run = easeInOut(timeElapsed, startPosition, distance, duration);
+    
+    window.scrollTo(0, run);
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  function easeInOut (t, b, c, d) {
+    t /= d/2;
+    if (t < 1) return c/2*t*t*t*t + b;
+    t -= 2;
+    return -c/2 * (t*t*t*t - 2) + b;
+  };
+
+  requestAnimationFrame(animation);
 }
 
-/* First button scroll function */
-let btnFirst = document.querySelector(".button")
+let btn = document.querySelector(".button");
 
-btnFirst.addEventListener("click", ()=>{
-   window.scrollTo({
-    top: vh(100),
-    left: 0, 
-    behavior: "smooth"
-   });
+btn.addEventListener("click", function(){
+  smoothScroll("#first", 1250);
 })
+
+
+
+// let btn = document.querySelector(".button");
+
+// btn.addEventListener("click", ()=>{
+//   window.scroll({
+//     top: vh(100),
+//     left: 0,
+//     behavior: 'smooth'
+//   });
+// })
+
