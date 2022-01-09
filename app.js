@@ -1,9 +1,11 @@
+/* Intro Function */
 let intro = document.querySelector(".intro");
 let text = document.querySelector(".text-header");
 let textSpan = document.querySelectorAll(".text");
 
-/* Intro Function */
+/* When content of page loads */
 window.addEventListener('DOMContentLoaded', ()=>{
+  /* Add active class to the elements to make them rise */
   setTimeout(()=>{
     textSpan.forEach((span, idx)=>{
       setTimeout(()=>{
@@ -11,6 +13,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
       }, (idx + 1) * 400)
     });
 
+    /* Replace the class "active" with the class "fade" to make the element go away */
     setTimeout(()=>{
       textSpan.forEach((span, idx)=>{
         setTimeout(()=>{
@@ -20,19 +23,14 @@ window.addEventListener('DOMContentLoaded', ()=>{
       })
     }, 2000);
 
+    /* Makes the colored background go away too */
     setTimeout(()=>{
       intro.style.top = "-100vh";
     }, 2300)
   }, 1000)
 });
 
-// /* Get vh value function */
-// function vh(v) {
-//   var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-//   return (v * h) / 100;
-// }
-
-// /* First button scroll function */
+// /* Main button scroll function */
 function smoothScroll(target, duration) {
   var target = document.querySelector(target);
   var targetPosition = target.getBoundingClientRect().top - 29; /* Subtract the margin of the element */  
@@ -68,16 +66,3 @@ let btn = document.querySelector(".button");
 btn.addEventListener("click", function(){
   smoothScroll("#first", 1250);
 })
-
-
-
-// let btn = document.querySelector(".button");
-
-// btn.addEventListener("click", ()=>{
-//   window.scroll({
-//     top: vh(100),
-//     left: 0,
-//     behavior: 'smooth'
-//   });
-// })
-
