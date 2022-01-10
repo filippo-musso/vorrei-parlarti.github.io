@@ -159,6 +159,10 @@ section#fourth h3 {
   text-transform: uppercase;
 }
 
+section#seventh {
+  padding: 0 10vw;
+}
+
 section#sixth {
   padding: 60px 40px;
   -webkit-clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
@@ -171,7 +175,6 @@ section#sixth {
   overflow: hidden;
   height: 66vh;
   width: 80vw;
-  margin: auto;
 }
 
 #iframe-container iframe {

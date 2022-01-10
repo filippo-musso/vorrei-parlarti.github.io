@@ -131,6 +131,9 @@ section {
       text-transform: uppercase;
     }
   }
+  &#seventh {
+    padding: 0 10vw;
+  }
   &#sixth {
     padding: 60px 40px;
     clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
@@ -144,7 +147,7 @@ section {
   overflow: hidden;
   height: 66vh;
   width: 80vw;
-  margin: auto;
+  // margin: auto;
   iframe {
     display: block;
     position: absolute;
