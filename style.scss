@@ -97,7 +97,7 @@ header {
   }
   .button {
     position: absolute;
-    bottom: 13%;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%);
     margin: auto;
@@ -161,14 +161,15 @@ section {
 .slider-container {
   position: relative;
   overflow: hidden;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
+  margin: auto;
   .slider {
     display: flex;
     height: 100%;
     img {
       height: 100%;
-      width: 350px;
+      width: 300px;
     }
   }
   .arrow {

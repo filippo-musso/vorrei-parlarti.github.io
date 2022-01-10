@@ -70,11 +70,13 @@ btn.addEventListener("click", function(){
   smoothScroll("#first", 1250);
 })
 
-/* Slider */
+/* SLIDER */
+const sliderContainer = document.querySelector(".slider-container");
 const slider = document.querySelector(".slider");
 const sliderImages = document.querySelectorAll(".slider img");
 
-/* Buttons */
+/* 1. */
+/* SLIDE WITH BUTTONS */
 const nextButton = document.querySelector(".rightArrow");
 const prevButton = document.querySelector(".leftArrow");
 
@@ -90,7 +92,6 @@ nextButton.addEventListener("click", function(){
   };
   slider.style.transition = "transform 0.4s ease-in-out";
   counter++;
-  console.log(counter);
   slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
 });
 
@@ -103,15 +104,19 @@ prevButton.addEventListener("click", function(){
   slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
 });
 
+/* Slide function (buttons) */
 slider.addEventListener("transitionend", function() {
   if (sliderImages[counter].id === "lastClone") {
     slider.style.transition = "none";
     counter = sliderImages.length - 2;
     slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
-  }
+  };
   if (sliderImages[counter].id === "firstClone") {
     slider.style.transition = "none";
     counter = sliderImages.length - counter;
     slider.style.transform = 'translateX(' + (-size * counter) + 'px)';
   }
 });
+
+/* 2. */
+/* SLIDE WITH TOUCH (mobile)*/
