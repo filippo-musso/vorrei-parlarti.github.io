@@ -175,6 +175,7 @@ section#sixth {
   overflow: hidden;
   height: 66vh;
   width: 80vw;
+  margin: auto;
 }
 
 #iframe-container iframe {
